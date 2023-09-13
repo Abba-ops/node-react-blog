@@ -1,0 +1,30 @@
+<% layout("layouts/main") %>
+<div class="author">
+  <h1 class="author__header">Hi, I'm Jadesola</h1>
+  <p class="author__body">Web Developer</p>
+</div>
+<img
+  width="981"
+  alt="hero__image"
+  class="hero__image"
+  src="/images/hero-image.webp"
+  height="528"
+/>
+<section class="articles">
+  <h2 class="articles__header">Latest Posts</h2>
+  <ul class="article__ul">
+    <% posts.forEach((post) => { %>
+    <li>
+      <a href="/posts/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span class="article__li--date"
+          ><%= post.createdAt.toDateString() %></span
+        >
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+  <% if (nextPage !== null) { %>
+  <a href="?page=<%= nextPage %>" class="pagination">View Older Posts</a>
+  <% } %>
+</section>

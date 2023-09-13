@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Blog | <%= title %></title>
+    <script src="/js/main.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <%- include("../includes/header-admin") %>
+      <main class="main"><%- body -%></main>
+      <%- include("../includes/footer") %>
+    </div>
+  </body>
+</html>

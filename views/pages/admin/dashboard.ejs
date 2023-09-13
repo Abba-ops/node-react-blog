@@ -1,0 +1,18 @@
+<% layout("layouts/admin") %>
+<div class="admin__title">
+  <h2>Posts</h2>
+  <a href="/admin/create">Add New</a>
+</div>
+<ul class="admin__posts">
+  <% posts.forEach((post) => { %>
+  <li>
+    <a href="/posts/<%= post._id %>"> <%= post.title %> </a>
+    <div class="admin__post--controls">
+      <a href="/admin/edit/<%= post._id %>" class="btn">Edit</a>
+      <form action="/admin/delete/<%= post._id %>?_method=DELETE" method="post">
+        <button type="submit" class="btn__delete">Delete</button>
+      </form>
+    </div>
+  </li>
+  <% }) %>
+</ul>

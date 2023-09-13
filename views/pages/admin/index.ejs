@@ -1,0 +1,13 @@
+<% layout("layouts/admin") %>
+<h3>Sign in</h3>
+<form action="/admin" method="post">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" placeholder="Enter username" name="username" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" placeholder="Enter password" name="password" />
+  </div>
+  <button type="submit" class="btn">Sign in</button>
+</form>

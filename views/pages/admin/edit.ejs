@@ -1,0 +1,33 @@
+<% layout("layouts/admin") %>
+<a href="/admin/dashboard">Back</a>
+<div class="admin__title">
+  <h2>Edit Post</h2>
+  <form action="/admin/delete/<%= post._id %>?_method=DELETE" method="post">
+    <button type="submit" class="btn__delete">Delete</button>
+  </form>
+</div>
+<form action="/admin/edit/<%= post._id %>?_method=PUT" method="post">
+  <div>
+    <label for="title">Title</label>
+    <input
+      id="title"
+      type="text"
+      placeholder="Enter title"
+      value="<%= post.title %>"
+      name="title"
+    />
+  </div>
+  <div>
+    <label for="body">Body</label>
+    <textarea
+      id="body"
+      cols="50"
+      name="body"
+      placeholder="Enter body"
+      rows="10"
+    >
+<%= post.body %></textarea
+    >
+  </div>
+  <button type="submit" class="btn">Update</button>
+</form>
